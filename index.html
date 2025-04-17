@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн репетитор | Математика 1-4 классы</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Press+Start+2P&display=swap');
+        
+        body {
+            background-color: #FFD700;
+            background-image: radial-gradient(circle, #FF6347 10%, transparent 10%), 
+                              radial-gradient(circle, #FF6347 10%, transparent 10%);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Press Start 2P', cursive;
+            color: #4B0082;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 8px dashed #FF4500;
+            box-shadow: 15px 15px 0 #4B0082, 
+                       30px 30px 0 rgba(255, 69, 0, 0.5);
+        }
+        
+        h1 {
+            font-family: 'Rubik Mono One', sans-serif;
+            color: #FF4500;
+            text-align: center;
+            font-size: 2.5rem;
+            text-shadow: 5px 5px 0 #4B0082;
+            margin-bottom: 40px;
+            letter-spacing: -2px;
+            transition: all 0.1s;
+            position: relative;
+        }
+        
+        /* Глитч-эффект при наведении */
+        h1:hover {
+            animation: glitch 0.3s linear infinite;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            color: #4B0082;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .card {
+            background: white;
+            border: 5px solid #4B0082;
+            border-radius: 0;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        .card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 15px 15px 0 #FF4500;
+        }
+        
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover .card-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        .card-title {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #FF4500;
+        }
+        
+        .card-desc {
+            font-size: 0.7rem;
+            margin-bottom: 20px;
+            color: #4B0082;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4B0082;
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #FF4500;
+        }
+        
+        .btn:hover {
+            background: #FF4500;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+        
+        .decoration {
+            position: absolute;
+            font-size: 5rem;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .decoration-1 {
+            top: 50px;
+            left: 50px;
+            color: #FF4500;
+        }
+        
+        .decoration-2 {
+            bottom: 50px;
+            right: 50px;
+            color: #4B0082;
+        }
+        
+        .pixel-corners {
+            position: relative;
+        }
+        
+        .pixel-corners::before, .pixel-corners::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #FF4500;
+        }
+        
+        .pixel-corners::before {
+            top: -5px;
+            left: -5px;
+        }
+        
+        .pixel-corners::after {
+            bottom: -5px;
+            right: -5px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>МАТЕМАТИКА 1-4 КЛАСС</h1>
+        <p class="subtitle">Ваш онлайн репетитор|Елена Сергеевна</p>
+        
+        <div class="cards-container">
+            <div class="card">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FF4500">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <h3 class="card-title">Instagram</h3>
+                <p class="card-desc">Полезные посты и истории про математику для малышей</p>
+                <a href="https://www.instagram.com/primary.guru/" class="btn" id="clickSoundBtn">ПЕРЕЙТИ</a>
+            </div>
+            
+            <div class="card">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4B0082">
+                    <path d="M12 0c-6.627 0-12 4.975-12 11.111 0 3.497 1.745 6.616 4.472 8.652v4.237l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.974 12-11.111 0-6.136-5.373-11.111-12-11.111zm1.191 14.963l-3.056-3.259-5.963 3.259 6.559-6.963 3.13 3.259 5.889-3.259-6.559 6.963z"/>
+                </svg>
+                <h3 class="card-title">Telegram</h3>
+                <p class="card-desc">Чат с репетитором и полезные материалы</p>
+                <a href="https://t.me/primaryGURU" class="btn" id="clickSoundBtn">ПЕРЕЙТИ</a>
+            </div>
+            
+            <div class="card">
+                <svg class="card-icon floating" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FF4500">
+                    <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
+                </svg>
+                <h3 class="card-title">Email</h3>
+                <p class="card-desc">Напишите мне письмо с вопросами</p>
+                <a href="mailto:primaryschoolfocus@gmail.com" class="btn" id="clickSoundBtn">НАПИСАТЬ</a>
+            </div>
+            
+            <div class="card">
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4B0082">
+                    <path d="M11.362 2c4.156 0 2.638 6 2.638 6s6-1.65 6 2.457v11.543h-16v-20h7.362zm.827-2h-9.189v24h20v-14.386c0-2.391-6.648-9.614-10.811-9.614zm4.811 13h-10v-1h10v1zm0 2h-10v1h10v-1zm0 3h-10v1h10v-1z"/>
+                </svg>
+                <h3 class="card-title">Google Forms</h3>
+                <p class="card-desc">Записаться на пробный урок</p>
+                <a href="https://forms.google.com" class="btn" id="clickSoundBtn">ЗАПОЛНИТЬ</a>
+            </div>
+        </div>
+        
+        <div class="decoration decoration-1">✕</div>
+        <div class="decoration decoration-2">+</div>
+    </div>
+    
+    <!-- Аудио для звука клика (скрыто) -->
+    <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2093/2093-preview.mp3" preload="auto"></audio>
+    
+    <script>
+        // Глитч-эффект уже в CSS, а вот звук клика:
+        const clickSound = document.getElementById('clickSound');
+        const buttons = document.querySelectorAll('.btn');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                clickSound.currentTime = 0; // Перемотка звука в начало
+                clickSound.play(); // Воспроизведение
+            });
+        });
+    </script>
+</body>
+</html>
